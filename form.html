@@ -1,0 +1,201 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>CSC 642 848 Fall 2021 Individual Assignment Valeria Vallejo</title>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+</head>
+<body>
+
+    <div class="container-fluid p-5 bg-dark text-white text-center">
+        <h1>Data Survey Form</h1>
+    </div>
+
+    <form name="dsForm" action="verify.html" method="get">
+        <div class="container mt-5">
+
+            <!--User last name then first name * (validate each for up to 40 characters)-->
+            <div class="row">
+                <div class="col-sm-5">
+                    <h6>Last Name*</h6>
+                    <input id="lname" name="lname" type="text" class="form-control" maxlength="40" required>
+                </div>
+                <div class="col-sm-5">
+                    <h6>First Name*</h6>
+                    <input id="fname" name="fname" type="text" class="form-control" maxlength="40" required>
+                </div>
+            </div>
+
+            <!--Title * (options: none; student; professor; staff; retired) *-->
+            <div class="row">
+                <div class="col-sm-5 dropdown pt-3">
+                    <h6>Preferred Title*</h6>
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="title" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" required>
+                        Select
+                    </button>
+                    <div class="dropdown-menu ml-2" aria-labelledby="title">
+                        <button class="dropdown-item" type="button">None</button>
+                        <button class="dropdown-item" type="button">Student</button>
+                        <button class="dropdown-item" type="button">Professor</button>
+                        <button class="dropdown-item" type="button">Staff</button>
+                        <button class="dropdown-item" type="button">Retired</button>
+                    </div>
+                </div>
+            </div>
+
+            <!--Height (feet, inches)-->
+            <br><h6>Height</h6>
+            <div class="row">
+                <div class="col-sm-1 pt-1">
+
+                    <input id="hfeet" name="hfeet" placeholder="ft" type="text" class="form-control">
+                </div>
+
+                <div class="col-sm-1 pt-1">
+
+                    <input id="hinches" name="hinches" placeholder="in" type="text" class="form-control">
+                </div>
+            </div>
+
+            <!--Phone (validate up to 10 digits)-->
+            <div class="row">
+                <div class="col-sm-5 pt-3">
+                    <h6>Phone</h6>
+                    <input id="phone" name="phone" type="text" class="form-control" maxlength="10">
+                </div>
+            </div>
+
+            <!--Address (validate to each entry up to 40 alpha numeric characters; Zip code: positive 5 digitnumber)-->
+            <div class="row">
+                <div class="col-sm-10 pt-3">
+                    <h6>Address*</h6>
+                    <input id="addrline1" name="addrline1" type="text" placeholder="Address Line 1" class="form-control" maxlength="40" required>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-10 pt-4">
+                    <input id="addrline2" name="addrline2" type="text" placeholder="Address Line 2" class="form-control" maxlength="40" required>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-5 pt-4">
+                    <input id="city" name="city" type="text" placeholder="City" class="form-control" maxlength="40" required>
+                </div>
+                <div class="col-sm-1 pt-4">
+                    <input id="state" name="state" type="text" placeholder="State" class="form-control" maxlength="40" required>
+                </div>
+                <div class="col-sm-2 pt-4">
+                    <input id="zipcode" name="zipcode" type="text" placeholder="ZIP" class="form-control" maxlength="5" min="0" required>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-5 pt-4">
+                    <input id="country" name="country" type="text" placeholder="Country" class="form-control" maxlength="40" required>
+                </div>
+            </div>
+
+            <!--Check all services required (options: e-mail; phone; Facebook; Tweeter;, surface mail; personal visit)-->
+            <div class="row">
+                <div class="col-sm-5 pt-3">
+                    <h6>Check all services required</h6>
+                    <div class="form-check mt-2 ml-4">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                        <label class="form-check-label" for="flexCheckDefault">
+                            E-mail
+                        </label>
+                    </div>
+                    <div class="form-check ml-4">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                        <label class="form-check-label" for="flexCheckDefault">
+                            Phone
+                        </label>
+                    </div>
+                    <div class="form-check ml-4">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                        <label class="form-check-label" for="flexCheckDefault">
+                            Facebook
+                        </label>
+                    </div>
+                    <div class="form-check ml-4">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                        <label class="form-check-label" for="flexCheckDefault">
+                            Twitter
+                        </label>
+                    </div>
+                    <div class="form-check ml-4">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                        <label class="form-check-label" for="flexCheckDefault">
+                            Surface Mail
+                        </label>
+                    </div>
+                    <div class="form-check ml-4">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                        <label class="form-check-label" for="flexCheckDefault">
+                            Personal Visit
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <!--Your monthly budget for services (options: less than $ 50, between $ 50 and $ 100; above $100)-->
+            <div class="row">
+                <div class="col-sm-5 dropdown pt-3">
+                    <h6>Your monthly budget for services</h6>
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="title" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Select
+                    </button>
+                    <div class="dropdown-menu ml-2" aria-labelledby="title">
+                        <button class="dropdown-item" type="button">less than $ 50</button>
+                        <button class="dropdown-item" type="button">between $ 50 and $ 100</button>
+                        <button class="dropdown-item" type="button">above $100</button>
+                    </div>
+                </div>
+            </div>
+
+            <!--Your e-mail (verify basic e-mail format e.g. has @ sign et)*-->
+            <div class="row">
+                <div class="col-sm-5 pt-3">
+                    <h6>Email</h6>
+                    <input id="email" name="email" type="text" class="form-control"><br>
+                </div>
+            </div>
+
+            <!--“I Agree to terms” check * - (has to ensure this has been checked, but no need to have actualterms page, the link can be dummy link)-->
+            <div class="row ml-3">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" required>
+                <label class="form-check-label" for="flexCheckDefault">
+                    <b>I Agree to <a href="terms.html">terms</a> * </b>
+                </label>
+            </div>
+
+
+            <!--Captcha * (use any open source captcha to prevent robots registering or design your own)-->
+            <div class="row">
+                <div class="col-sm-5 pt-3">
+                    <h6>Captcha*</h6>
+                    <div class="g-recaptcha" data-sitekey="6LcWG3wdAAAAAKMXgdbhGa2xNANbPebgBCb5tAFC" required></div>
+                    <br>
+                </div>
+            </div>
+
+            <!--Submit * (use any open source captcha to prevent robots registering or design your own)-->
+            <div class="col-12">
+                <button class="btn btn-primary" type="submit">Submit form</button>
+                <br><br>
+            </div>
+        </div>
+    </form>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>
